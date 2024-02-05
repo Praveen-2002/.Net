@@ -1,0 +1,38 @@
+<center class="display">
+        <h4>Output:</h4>
+        @{ List<string> lis = new List<string>();
+            int num = @Model==null?0:@Model.num;
+            int j =1;
+            }
+
+        @if (num>0 && num<1000){
+            for(int i=1;i<num;i++){
+                if(i%3==0 && i%5==0){
+                    lis.Add("fizz buzz");
+                }else if(i%3==0){
+                    lis.Add("fizz");
+                }else if(i%5==0){
+                    lis.Add("buzz");
+                }
+            }
+            for(int i=0+(20*(j-1));i<20*j;i++){
+                if(i<lis.Count){
+                    if(lis[i].Equals("fizz")){
+                        <p class="text-primary">fizz</p>
+                    } else if(lis[i].Equals("buzz")){
+                        <p class="text-success">buzz</p>
+                    }else{
+                        <p class = "text-dark">fizz buzz</p>
+                    }<hr/>
+                }
+            }
+            
+            <div class="prevNext">
+                <button class="btn btn-sm btn-warning me-5" disabled="@j==1?true:false" onclick="perv()">prev</button> 
+                <button class ="btn btn-sm btn-warning ms-4" onclick="next()">next</button>
+            </div>
+        }else{
+            <p>You can only enter values between 1 and 1000. <a href="/Home/index">Click here</a></p>
+        }
+    </center>
+
